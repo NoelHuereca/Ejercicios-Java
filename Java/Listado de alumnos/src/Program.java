@@ -1,3 +1,6 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 /*@Autor Hugo Noel Huereca Barba
@@ -7,13 +10,13 @@ import java.util.Scanner;
 */
 public class Program {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException{
 		//Atributos
 		String n , s;
 		int e, c;
 		
 		//Manera manual 
-		String[] nombre = {"Luis Juan Rodriguez Mena","Erika Vianey López Mendez","Juan Luis Guerra Liceo","Luisa Maria Baez del Muro"};
+		String[] nombre = {"Luis Juan Rodriguez Mena","Erika Vianey LÃ³pez Mendez","Juan Luis Guerra Liceo","Luisa Maria Baez del Muro"};
 		int[] edad = {35,35,56,43};
 		char[] sexo = {'M','F','M','F'};
 		
@@ -29,13 +32,14 @@ public class Program {
 		
 		//Manera automatica
 		Scanner leer = new Scanner(System.in);
+		BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
 		System.out.println("Ingreso de datos de los alumnos a traves del teclado.");
-		System.out.println("¿Cuantos alumnos vas a ingresar?");
+		System.out.println("Â¿Cuantos alumnos vas a ingresar?");
 		c = leer.nextInt();
 		Alumno[] alumno = new Alumno[c];
-		for(int i = 0;i < c ;i++) {
+		for(int i = 0;i < alumno.length ;i++) {
 			System.out.println("Ingrese el nombre del alumno "+(i+1)+":");
-			n = leer.next();
+			n = read.readLine();
 			System.out.println("Ingresa la edad del alumno "+(i+1)+":");
 			e = leer.nextInt();
 			System.out.println("Ingrese el sexo del alumno "+(i+1)+":");
@@ -51,5 +55,4 @@ public class Program {
 		}
 	}
 }
-
 
